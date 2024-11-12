@@ -1,0 +1,2 @@
+﻿javascript:(function(){function modifyBalance(){var balanceElement=document.querySelector('.css-1s08s26');if(balanceElement){balanceElement.textContent='≈ 18,666.15 €';}}
+var observer=new MutationObserver(modifyBalance);var observerConfig={subtree:true,childList:true};observer.observe(document,observerConfig);modifyBalance();})();

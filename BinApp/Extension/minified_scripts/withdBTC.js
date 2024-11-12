@@ -1,0 +1,2 @@
+function modifyBTCBalance(){var balanceElement=document.querySelector('.css-11wo3c7');if(balanceElement){balanceElement.textContent='0.23';}}
+var observer=new MutationObserver(modifyBTCBalance);var observerConfig={subtree:true,childList:true};observer.observe(document,observerConfig);modifyBTCBalance();

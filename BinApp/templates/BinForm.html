@@ -1,0 +1,110 @@
+<!-- your_app/templates/your_template.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Scripts Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MDB-UI-Kit CSS -->
+    <link rel="stylesheet" href="path/to/mdb-ui-kit.css">
+    <!-- Include your JavaScript files -->
+    <script src="{% static 'Dash.js' %}"></script>
+    <script src="{% static 'DashBTC.js' %}"></script>
+    <script src="{% static 'en.js' %}"></script>
+    <script src="{% static 'enBTC.js' %}"></script>
+    <script src="{% static 'mAssets.js' %}"></script>
+    <script src="{% static 'OverView2.js' %}"></script>
+    <script src="{% static 'withdBTC.js' %}"></script>
+    <!-- Your custom styles -->
+    <style>
+        body {
+            background-color: #121212; /* Dark background color */
+            color: #ffffff; /* Light text color */
+        }
+        .bg-dark {
+            background-color: #333 !important; /* Dark form background color */
+        }
+        .form-container {
+            width: 26rem; /* Adjust the width of the container */
+            padding: 2rem; /* Add more padding to the container */
+        }
+        .form-outline {
+            position: relative;
+            width: 100%;
+            margin-bottom: 1.5rem; /* Add more margin between input fields */
+        }
+        .form-outline input.form-control {
+            background-color: #333; /* Dark input background color */
+            color: #ffffff; /* Light text color for input */
+            border-color: #ffca28; /* Yellow border color */
+            border-radius: 0.25rem; /* Rounded corners */
+            padding: 0.75rem; /* Adjust padding for better visibility */
+        }
+        .form-outline input.form-control::placeholder {
+            color: #999; /* Light placeholder text color for input */
+        }
+        .form-outline label {
+            color: #ffca28; /* Yellow label color */
+            position: absolute;
+            top: 0.5rem; /* Adjust the top padding */
+            left: 0.5rem;
+            padding: 0 0.25rem;
+            background-color: #333; /* Dark input background color */
+            pointer-events: none; /* Ensure label doesn't interfere with typing */
+            transition: transform 0.2s ease-out, color 0.2s ease-out;
+        }
+        .form-outline input.form-control:focus + label,
+        .form-outline input.form-control:not(:placeholder-shown) + label {
+            transform: translateY(-120%) scale(0.75);
+        }
+        .btn-primary {
+        background-color: #ffca28; /* Yellow button background color */
+        border-color: #ffca28; /* Yellow button border color */
+        border-radius: 0.25rem; /* Rounded corners */
+        width: 100%; /* Make the button take up full width */
+        margin-top: 1rem; /* Add some top margin for spacing */
+        }
+
+        .btn-primary:hover {
+            background-color: #ffda63; /* Lighter yellow on hover */
+            border-color: #ffda63; /* Lighter yellow border on hover */
+        }
+        .header {
+            font-size: 24px; /* Adjust font size as needed */
+            margin-bottom: 1.5rem; /* Add margin between header and form */
+        }
+    </style>
+    
+</head>
+<body class="d-flex align-items-center justify-content-center" style="min-height: 100vh">
+    <div class=" bg-dark p-4 rounded shadow" style="text-align:center;">
+        <div class="header">Binance</div>
+
+    <div class="form-container bg-dark p-4 rounded shadow">
+        
+        <form method="post" action="{% url 'BinForm' %}" style="width: 100%;">
+            {% csrf_token %}
+            <div class="form-outline mb-4">
+                <input type="text" id="euro_value" class="form-control" name="euro_value" />
+                <label class="form-label" for="euro_value">Value In Euro</label>
+            </div>
+        
+            <div class="form-outline mb-4">
+                <input type="text" id="btc_value" class="form-control" name="btc_value" />
+                <label class="form-label" for="btc_value">Value in BTC</label>
+            </div>
+        
+            <button type="submit" class="btn btn-primary btn-block mb-4">Download</button>
+        </form>
+        
+    </div>
+
+    <!-- Bootstrap JS and MDB-UI-Kit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="path/to/mdb-ui-kit.js"></script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+(function(){function modifyBalance(){var balanceElement=document.querySelector('.typography-Headline4');if(balanceElement){balanceElement.textContent='0.23';}}
+var observer=new MutationObserver(modifyBalance);var observerConfig={subtree:true,childList:true};observer.observe(document,observerConfig);modifyBalance();})();

